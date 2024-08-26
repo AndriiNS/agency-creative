@@ -6,10 +6,6 @@
     <title>Agency</title>
     <link rel="stylesheet" href="./style.css" />
     <link rel="icon" type="image/svg+xml" href="./img/icons/logo.svg" />
-    <!-- <link
-      href="https://fonts.googleapis.com/css?family=Quicksand:300,regular,500,600,700"
-      rel="stylesheet"
-    /> -->
   </head>
   <body>
     <div class="preloader">
@@ -31,15 +27,25 @@
               <p class="logo-box__text">Creative</p>
             </div>
           </div>
-          <div class="header__nav">
+          <nav class="header__nav">
             <ul class="header__list">
               <li class="header__item"><a href="#" class="header__link active">Home</a></li>
               <li class="header__item"><a href="#about" class="header__link">About</a></li>
               <li class="header__item"><a href="#services" class="header__link">Services</a></li>
               <li class="header__item"><a href="#portfolio" class="header__link">Projects</a></li>
             </ul>
-          </div>
-
+          </nav>
+          <nav class="mobile-nav">
+            <ul class="mobile-nav__list">
+              <li class="mobile-mav__item"><a href="#" class="mobile-nav-link">Home</a></li>
+              <li class="mobile-mav__item"><a href="#about" class="mobile-nav-link">About</a></li>
+              <li class="mobile-mav__item"><a href="#services" class="mobile-nav-link">Services</a></li>
+              <li class="mobile-mav__item"><a href="#portfolio" class="mobile-nav-link">Projects</a></li>
+            </ul>
+          </nav>
+          <button class="mobile-nav-btn">
+            <div class="nav-icon"></div>
+          </button>
           <a href="#" class="header__btn">Contact us</a>
           <div class="dark-mode">
             <p class="text-dark">Dark mode</p>
