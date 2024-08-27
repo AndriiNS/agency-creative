@@ -115,21 +115,22 @@ gsap.from(".dream__text", { duration: 1.5, y: 100, opacity: 0, ease: "power4.out
 
 const isMobile = window.innerWidth <= 968;
 
-gsap.from(".dream__img", {
-  scrollTrigger: {
-    trigger: ".dream__img",
-    start: "top 80%",
-    end: "bottom 20%",
-    toggleActions: "play none none none",
-    once: true
-  },
-  duration: 1.5,
-  x: isMobile ? 0 : 100,
-  y: isMobile ? 100 : 0,
-  opacity: 0,
-  delay: 1,
-  ease: "power4.out"
-});
+if (!isMobile) {
+  gsap.from(".dream__img", {
+    scrollTrigger: {
+      trigger: ".dream__img",
+      start: "top 80%",
+      end: "bottom 20%",
+      toggleActions: "play none none none",
+      once: true
+    },
+    duration: 1.5,
+    x: 100,
+    opacity: 0,
+    delay: 1,
+    ease: "power4.out"
+  });
+}
 gsap.to(".dream__btn", { opacity: 1, scale: 1, duration: 1, ease: "power3.out", delay: 7 });
 gsap.from(".done", {
   scrollTrigger: {
