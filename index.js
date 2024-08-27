@@ -113,6 +113,8 @@ gsap.to(".dream__title", { duration: 1.5, scaleX: 1, ease: "power4.out", delay: 
 
 gsap.from(".dream__text", { duration: 1.5, y: 100, opacity: 0, ease: "power4.out", delay: 6 });
 
+const isMobile = window.innerWidth <= 968;
+
 gsap.from(".dream__img", {
   scrollTrigger: {
     trigger: ".dream__img",
@@ -122,7 +124,8 @@ gsap.from(".dream__img", {
     once: true
   },
   duration: 1.5,
-  x: 100,
+  x: isMobile ? 0 : 100,
+  y: isMobile ? 100 : 0,
   opacity: 0,
   delay: 7,
   ease: "power4.out"
