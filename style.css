@@ -372,6 +372,7 @@ legend {
   justify-content: center;
   align-items: center;
   display: none;
+  padding-right: 4rem;
 }
 
 .nav-icon {
@@ -430,24 +431,23 @@ legend {
   overflow-x: hidden;
 }
 
-.mobile-nav-btn {
-  z-index: 999;
-}
-
 .mobile-nav {
   position: fixed;
-  top: -100%;
   width: 100%;
-  height: 100%;
-  z-index: 99;
+  height: 100vh;
+  background: linear-gradient(135deg, #377dff, #6a90f0, #a0b3ff);
+  top: -100vh;
+  transition: all 0.3s ease 0s;
+  z-index: 98;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background: rgb(130, 156, 168);
-  transition: all 0.2s ease-in;
+  align-items: center;
+  gap: 3rem;
+}
+
+.sytle {
+  color: #377dff;
 }
 
 .mobile-nav--open {
@@ -456,6 +456,7 @@ legend {
 
 .mobile-nav a {
   color: #fff;
+  font-weight: 600;
 }
 
 .mobile-nav__list {
@@ -467,6 +468,18 @@ legend {
 }
 .mobile-nav__list .active {
   opacity: 0.5;
+}
+
+.mobile-nav-btn {
+  position: absolute;
+  top: 8.5rem;
+  right: 5rem;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 4rem;
+  display: none;
 }
 
 .blue-dot1 {
@@ -1265,6 +1278,7 @@ legend {
   }
   .mobile-nav-btn {
     display: block;
+    z-index: 999;
   }
   main {
     max-width: 100%;

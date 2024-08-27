@@ -24,17 +24,32 @@ function mobileNav() {
   const navBtn = document.querySelector(".mobile-nav-btn");
   const nav = document.querySelector(".mobile-nav");
   const menuIcon = document.querySelector(".nav-icon");
+  const navLinks = document.querySelectorAll(".mobile-nav-link");
 
   navBtn.onclick = function () {
     nav.classList.toggle("mobile-nav--open");
     menuIcon.classList.toggle("nav-icon--active");
-    document.body.classList.toggle("no-scroll");
+
+    if (document.body.style.overflow === "hidden") {
+      document.body.style.overflow = "";
+    } else {
+      document.body.style.overflow = "hidden";
+    }
   };
+
+  navLinks.forEach((link) => {
+    link.onclick = function () {
+      nav.classList.remove("mobile-nav--open");
+      menuIcon.classList.remove("nav-icon--active");
+      document.body.style.overflow = "";
+    };
+  });
 }
+
 document.addEventListener("DOMContentLoaded", mobileNav);
 //========================================================================================================================================================
 //preloader
-document.body.classList.add("no-scroll");
+document.body.style.overflow = "hidden";
 
 gsap.fromTo(".preloader-logo img", { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.5, ease: "power3.out", delay: 0.5 });
 
@@ -56,8 +71,7 @@ gsap.to(".preloader-text-box", {
   delay: 4.5,
   onComplete: () => {
     document.querySelector(".preloader").style.display = "none";
-    // Дозволити скролінг після завершення прелоадера
-    document.body.classList.remove("no-scroll");
+    document.body.style.overflow = "initial";
   }
 });
 // input toggle
@@ -88,7 +102,13 @@ checkbox.addEventListener("change", () => {
 //========================================================================================================================================================
 gsap.from(".header", { duration: 2, y: -100, opacity: 0, ease: "power4.out", delay: 6, scale: 0.7 });
 gsap.set(".dream__title", { opacity: 1, scaleX: 0, transformOrigin: "left center", willChange: "transform" });
-
+gsap.from(".mobile-nav-btn", {
+  duration: 1,
+  x: 100,
+  opacity: 0,
+  delay: 6,
+  ease: "power2.out"
+});
 gsap.to(".dream__title", { duration: 1.5, scaleX: 1, ease: "power4.out", delay: 6 });
 
 gsap.from(".dream__text", { duration: 1.5, y: 100, opacity: 0, ease: "power4.out", delay: 6 });
