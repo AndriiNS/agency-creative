@@ -127,7 +127,7 @@ gsap.from(".dream__img", {
   x: isMobile ? 0 : 100,
   y: isMobile ? 100 : 0,
   opacity: 0,
-  delay: 7,
+  delay: 1,
   ease: "power4.out"
 });
 gsap.to(".dream__btn", { opacity: 1, scale: 1, duration: 1, ease: "power3.out", delay: 7 });
